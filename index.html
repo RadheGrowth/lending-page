@@ -22,7 +22,7 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       background: #0b0f1a;
       color: #fff;
       text-align: center;
@@ -34,10 +34,19 @@
       margin: auto;
     }
 
+    /* CENTER + ROUND IMAGE */
+    .hero {
+      display: flex;
+      justify-content: center;
+    }
+
     .hero img {
-      width: 100%;
-      border-radius: 15px;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
       box-shadow: 0 0 25px rgba(0,0,0,0.7);
+      margin-bottom: 15px;
     }
 
     h1 {
@@ -95,7 +104,6 @@
 <div class="container">
 
   <div class="hero">
-    <!-- FIXED IMAGE LINE -->
     <img src="trader.jpg" alt="Trader Image">
   </div>
 
@@ -111,7 +119,7 @@
      class="cta-btn" 
      target="_blank"
      onclick="fbq('track','Lead');">
-     🚀 JOIN TELEGRAM CHANNEL
+     🚀 JOIN FREE TELEGRAM CHANNEL
   </a>
 
   <div class="badge">
