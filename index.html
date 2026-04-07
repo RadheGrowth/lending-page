@@ -1,151 +1,171 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trader Pihu Official</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trader Pihu Official</title>
 
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1325268956141870');
-    fbq('track', 'PageView');
-  </script>
+<!-- Meta Pixel Code -->
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0f1a;
-      color: #fff;
-      text-align: center;
-    }
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 
-    .container {
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
-    }
+fbq('init', '1325268956141870');
+fbq('track', 'PageView');
+</script>
 
-    /* CENTER + ROUND IMAGE */
-    .hero {
-      display: flex;
-      justify-content: center;
-    }
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1325268956141870&ev=PageView&noscript=1"/>
+</noscript>
 
-    .hero img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 0 25px rgba(0,0,0,0.7);
-      margin-bottom: 15px;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(-45deg, #0b0f1a, #111827, #1a1f35, #0b0f1a);
+  background-size: 400% 400%;
+  animation: bg 10s ease infinite;
+  color: white;
+}
 
-    h1 {
-      font-size: 30px;
-      color: #ffd700;
-      margin: 15px 0;
-    }
+/* animated background */
+@keyframes bg {
+  0% {background-position: 0%}
+  50% {background-position: 100%}
+  100% {background-position: 0%}
+}
 
-    p {
-      color: #ccc;
-      font-size: 16px;
-      line-height: 1.5;
-    }
+/* center layout */
+.center-box {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
 
-    .cta-btn {
-      display: inline-block;
-      background: linear-gradient(90deg, #ffd700, #ffb300);
-      color: #000;
-      padding: 15px 25px;
-      font-size: 18px;
-      border-radius: 12px;
-      text-decoration: none;
-      margin: 20px 0;
-      font-weight: bold;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-    }
+/* floating image */
+.hero img {
+  width: 160px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+  box-shadow: 0 0 25px rgba(255,215,0,0.5);
+}
 
-    .cta-btn:hover {
-      transform: scale(1.05);
-    }
+@keyframes float {
+  0%,100% {transform: translateY(0)}
+  50% {transform: translateY(-12px)}
+}
 
-    .badge {
-      color: #00ffcc;
-      font-size: 14px;
-      margin-top: 10px;
-    }
+h1 {
+  color: gold;
+  margin-bottom: 10px;
+}
 
-    .box {
-      background: #111827;
-      padding: 15px;
-      border-radius: 12px;
-      margin-top: 15px;
-    }
+/* timer */
+.timer {
+  font-size: 26px;
+  margin: 15px 0;
+  color: #ff4d4d;
+}
 
-    .footer {
-      font-size: 12px;
-      color: #777;
-      margin-top: 20px;
-    }
-  </style>
+/* button */
+.cta-btn {
+  padding: 18px 30px;
+  font-size: 20px;
+  border-radius: 12px;
+  background: linear-gradient(90deg,#ffd700,#ffb300);
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  opacity: 0.5;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+/* active button */
+.cta-btn.active {
+  opacity: 1;
+  pointer-events: auto;
+  box-shadow: 0 0 20px gold;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {box-shadow: 0 0 10px gold}
+  50% {box-shadow: 0 0 25px gold}
+  100% {box-shadow: 0 0 10px gold}
+}
+
+.footer {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 25px;
+}
+</style>
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="center-box">
 
   <div class="hero">
     <img src="trader.jpg" alt="Trader Image">
   </div>
 
-  <h1>TRADER PIHU ( ORIGINAL )</h1>
+  <h1>TRADER PIHU (ORIGINAL)</h1>
 
-  <p>
-    📈 Daily Stock Market Analysis <br>
-    💰 Intraday & Swing Trading Calls <br>
-    🎯 Beginner Friendly Learning
-  </p>
+  <div class="timer" id="timer">⏳ Wait 30 sec...</div>
 
-  <a href="https://t.me/+iRuG8yBIQI80NDZl" 
-     class="cta-btn" 
-     target="_blank"
-     onclick="fbq('track','Lead');">
-     🚀 JOIN FREE TELEGRAM CHANNEL
-  </a>
-
-  <div class="badge">
-    ✅ 100% FREE • NO CHARGES
-  </div>
-
-  <div class="box">
-    🔥 Aaj hi join karo aur market seekho step by step  
-    📊 Daily setups + live updates milenge
-  </div>
-
-  <div class="box">
-    💡 Beginners ke liye simple explanation  
-    📉 Chart reading + strategy breakdown
-  </div>
-
-  <div class="box">
-    ⚠️ Limited log join kar pa rahe hain  
-    ⏳ Jaldi join karo before market opens
-  </div>
+<a href="https://t.me/+iRuG8yBIQI80NDZl"
+  id="joinBtn"
+  class="cta-btn"
+  onclick="joinNow()">
+🚀 JOIN FREE TELEGRAM CHANNEL </a>
 
   <div class="footer">
-    Disclaimer: This channel is for educational purposes only. Market investments are subject to risk.
+    ⚠️ Limited access • Join fast before market opens
   </div>
 
 </div>
+
+<script>
+// countdown
+let timeLeft = 30;
+let timerEl = document.getElementById("timer");
+let btn = document.getElementById("joinBtn");
+
+let countdown = setInterval(() => {
+  timeLeft--;
+  timerEl.innerText = "⏳ Wait " + timeLeft + " sec...";
+
+  if(timeLeft <= 0){
+    clearInterval(countdown);
+    timerEl.innerText = "✅ Now You Can Join!";
+    btn.classList.add("active");
+  }
+}, 1000);
+
+// tracking
+function joinNow(){
+  fbq('track','Lead');
+  fbq('track','Subscribe');
+  fbq('trackCustom','TelegramJoin');
+}
+</script>
 
 </body>
 </html>
