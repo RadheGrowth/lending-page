@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trader Pihu Official</title>
 
-<!-- ✅ META PIXEL (CLEAN VERSION) -->
+<!-- META PIXEL -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,79 +17,92 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
 fbq('init', '1325268956141870');
-
-// ✅ ONLY PAGE VIEW
 fbq('track', 'PageView');
 </script>
 
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1325268956141870&ev=PageView&noscript=1"/>
-</noscript>
-
 <style>
-body {
+* {
   margin: 0;
-  font-family: Arial;
-  background: linear-gradient(-45deg,#0b0f1a,#111827,#1a1f35);
-  background-size: 400% 400%;
-  animation: bg 10s infinite;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
 }
 
-@keyframes bg {
-  0% {background-position:0%}
-  50% {background-position:100%}
-  100% {background-position:0%}
-}
-
+/* MAIN CARD */
 .container {
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
+  width: 90%;
+  max-width: 420px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 25px;
   text-align: center;
+  box-shadow: 0 0 40px rgba(0,0,0,0.5);
 }
 
+/* PROFILE IMAGE */
 .hero img {
-  width: 150px;
+  width: 120px;
   border-radius: 50%;
-  box-shadow: 0 0 25px gold;
-}
-
-h1 {
-  color: gold;
-  margin: 10px 0;
-}
-
-.tagline {
-  color: #ccc;
+  border: 3px solid gold;
   margin-bottom: 15px;
 }
 
+/* TITLE */
+h1 {
+  font-size: 22px;
+  color: #ffd700;
+  margin-bottom: 5px;
+}
+
+.tagline {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
 .cta-btn {
-  display: inline-block;
-  margin: 20px 0;
-  padding: 18px 30px;
-  font-size: 20px;
-  border-radius: 12px;
-  background: linear-gradient(90deg,#ffd700,#ffb300);
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  background: linear-gradient(90deg,#ffd700,#ff9900);
   color: #000;
+  font-size: 18px;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 0 20px gold;
+  margin: 15px 0;
+  transition: 0.3s;
 }
 
-.box {
-  background: rgba(255,255,255,0.05);
-  padding: 15px;
+.cta-btn:hover {
+  transform: scale(1.05);
+}
+
+/* FEATURES */
+.feature {
+  background: rgba(255,255,255,0.07);
+  padding: 12px;
   border-radius: 10px;
-  margin-top: 15px;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
+/* FOOTER */
 .footer {
-  font-size: 12px;
+  font-size: 11px;
   color: #aaa;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 </style>
 
@@ -109,18 +122,18 @@ h1 {
 🚀 India’s Fast Growing Trading Community
 </div>
 
-<!-- ✅ TELEGRAM BUTTON (ONLY TRACKING HERE) -->
 <a href="https://t.me/+iRuG8yBIQI80NDZl"
-class="cta-btn"
 target="_blank"
-onclick="trackTelegramClick()">
+class="cta-btn"
+onclick="trackClick()">
 🚀 JOIN FREE TELEGRAM CHANNEL
 </a>
 
-<div class="box">📈 Daily Intraday & Swing Trading Calls</div>
-<div class="box">💰 High Accuracy Trade Setups</div>
-<div class="box">📊 Live Market Updates</div>
-<div class="box">🎯 Beginner Friendly Learning</div>
+<div class="feature">📈 Daily Intraday & Swing Trading Calls</div>
+<div class="feature">💰 High Accuracy Trade Setups</div>
+<div class="feature">📊 Live Market Updates</div>
+<div class="feature">🎯 Beginner Friendly Learning</div>
+<div class="feature">🔥 Proven Strategy + Risk Management</div>
 
 <div class="footer">
 ⚠️ This is not financial advice. Trading involves risk.
@@ -128,10 +141,9 @@ onclick="trackTelegramClick()">
 
 </div>
 
-<!-- ✅ ONLY CLICK TRACKING SCRIPT -->
 <script>
-function trackTelegramClick(){
-  fbq('track', 'Lead'); // ONLY THIS EVENT WILL FIRE
+function trackClick(){
+  fbq('track','Lead');
 }
 </script>
 
