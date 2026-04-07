@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trader Pihu Official</title>
 
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel -->
 
 <script>
 !function(f,b,e,v,n,t,s)
@@ -30,58 +30,64 @@ src="https://www.facebook.com/tr?id=1325268956141870&ev=PageView&noscript=1"/>
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(-45deg, #0b0f1a, #111827, #1a1f35, #0b0f1a);
+  font-family: Arial;
+  background: linear-gradient(-45deg,#0b0f1a,#111827,#1a1f35);
   background-size: 400% 400%;
-  animation: bg 10s ease infinite;
-  color: white;
+  animation: bg 10s infinite;
+  color: #fff;
 }
 
-/* animated background */
 @keyframes bg {
-  0% {background-position: 0%}
-  50% {background-position: 100%}
-  100% {background-position: 0%}
+  0% {background-position:0%}
+  50% {background-position:100%}
+  100% {background-position:0%}
 }
 
-/* center layout */
 .center-box {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   text-align: center;
   padding: 20px;
 }
 
-/* floating image */
 .hero img {
-  width: 160px;
+  width: 150px;
   border-radius: 50%;
-  margin-bottom: 20px;
-  animation: float 3s ease-in-out infinite;
-  box-shadow: 0 0 25px rgba(255,215,0,0.5);
+  animation: float 3s infinite;
+  box-shadow: 0 0 25px gold;
 }
 
 @keyframes float {
-  0%,100% {transform: translateY(0)}
-  50% {transform: translateY(-12px)}
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
 }
 
 h1 {
   color: gold;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
-/* timer */
-.timer {
-  font-size: 26px;
+.tagline {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.points {
   margin: 15px 0;
-  color: #ff4d4d;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
-/* button */
+.timer {
+  font-size: 24px;
+  color: #ff4d4d;
+  margin: 15px 0;
+}
+
 .cta-btn {
   padding: 18px 30px;
   font-size: 20px;
@@ -95,24 +101,29 @@ h1 {
   transition: 0.3s;
 }
 
-/* active button */
 .cta-btn.active {
   opacity: 1;
   pointer-events: auto;
-  box-shadow: 0 0 20px gold;
+  box-shadow: 0 0 25px gold;
   animation: pulse 1.5s infinite;
 }
 
 @keyframes pulse {
-  0% {box-shadow: 0 0 10px gold}
-  50% {box-shadow: 0 0 25px gold}
-  100% {box-shadow: 0 0 10px gold}
+  0%{box-shadow:0 0 10px gold}
+  50%{box-shadow:0 0 30px gold}
+  100%{box-shadow:0 0 10px gold}
+}
+
+.fomo {
+  color: #00ffcc;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .footer {
   font-size: 12px;
   color: #aaa;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 </style>
 
@@ -122,33 +133,48 @@ h1 {
 
 <div class="center-box">
 
-  <div class="hero">
-    <img src="trader.jpg" alt="Trader Image">
-  </div>
+<div class="hero">
+<img src="trader.jpg">
+</div>
 
-  <h1>TRADER PIHU (ORIGINAL)</h1>
+<h1>TRADER PIHU (ORIGINAL)</h1>
 
-  <div class="timer" id="timer">⏳ Wait 30 sec...</div>
+<div class="tagline">
+India’s Fast Growing Trading Community 🚀
+</div>
+
+<div class="points">
+📈 Daily Intraday & Swing Calls <br>
+💰 High Accuracy Trade Setups <br>
+🎯 Beginner to Advanced Learning <br>
+📊 Live Market Updates & Analysis <br>
+🔥 Proven Strategy + Risk Management
+</div>
+
+<div class="fomo">
+⚡ 1200+ Traders Already Joined Today
+</div>
+
+<div class="timer" id="timer">⏳ Wait 30 sec...</div>
 
 <a href="https://t.me/+iRuG8yBIQI80NDZl"
-  id="joinBtn"
-  class="cta-btn"
-  onclick="joinNow()">
+id="joinBtn"
+class="cta-btn"
+onclick="joinNow()">
 🚀 JOIN FREE TELEGRAM CHANNEL </a>
 
-  <div class="footer">
-    ⚠️ Limited access • Join fast before market opens
-  </div>
+<div class="footer">
+⚠️ 100% FREE • Limited Access • Educational Purpose Only
+</div>
 
 </div>
 
 <script>
-// countdown
 let timeLeft = 30;
 let timerEl = document.getElementById("timer");
 let btn = document.getElementById("joinBtn");
 
-let countdown = setInterval(() => {
+let countdown = setInterval(()=>{
   timeLeft--;
   timerEl.innerText = "⏳ Wait " + timeLeft + " sec...";
 
@@ -157,9 +183,8 @@ let countdown = setInterval(() => {
     timerEl.innerText = "✅ Now You Can Join!";
     btn.classList.add("active");
   }
-}, 1000);
+},1000);
 
-// tracking
 function joinNow(){
   fbq('track','Lead');
   fbq('track','Subscribe');
