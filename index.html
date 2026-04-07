@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trader Pihu Official</title>
 
-<!-- Meta Pixel -->
-
+<!-- ✅ META PIXEL (CLEAN VERSION) -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -19,8 +17,9 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
 fbq('init', '1325268956141870');
+
+// ✅ ONLY PAGE VIEW
 fbq('track', 'PageView');
-fbq('track','Subscribe');
 </script>
 
 <noscript>
@@ -54,13 +53,7 @@ body {
 .hero img {
   width: 150px;
   border-radius: 50%;
-  animation: float 3s infinite;
   box-shadow: 0 0 25px gold;
-}
-
-@keyframes float {
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-12px)}
 }
 
 h1 {
@@ -84,13 +77,6 @@ h1 {
   font-weight: bold;
   text-decoration: none;
   box-shadow: 0 0 20px gold;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0%{box-shadow:0 0 10px gold}
-  50%{box-shadow:0 0 30px gold}
-  100%{box-shadow:0 0 10px gold}
 }
 
 .box {
@@ -98,12 +84,6 @@ h1 {
   padding: 15px;
   border-radius: 10px;
   margin-top: 15px;
-}
-
-.fomo {
-  color: #00ffcc;
-  margin-top: 10px;
-  font-size: 14px;
 }
 
 .footer {
@@ -120,7 +100,7 @@ h1 {
 <div class="container">
 
 <div class="hero">
-<img src="trader.jpg">
+<img src="trader.jpg" alt="Trader Pihu">
 </div>
 
 <h1>TRADER PIHU (ORIGINAL)</h1>
@@ -129,47 +109,29 @@ h1 {
 🚀 India’s Fast Growing Trading Community
 </div>
 
+<!-- ✅ TELEGRAM BUTTON (ONLY TRACKING HERE) -->
 <a href="https://t.me/+iRuG8yBIQI80NDZl"
 class="cta-btn"
-onclick="joinNow()">
-🚀 JOIN FREE TELEGRAM CHANNEL </a>
+target="_blank"
+onclick="trackTelegramClick()">
+🚀 JOIN FREE TELEGRAM CHANNEL
+</a>
 
-<div class="fomo">
-⚡ 1200+ Traders Already Joined Today
-</div>
-
-<div class="box">
-📈 Daily Intraday & Swing Trading Calls
-</div>
-
-<div class="box">
-💰 High Accuracy Trade Setups + Profit Focus
-</div>
-
-<div class="box">
-📊 Live Market Updates + Chart Analysis
-</div>
-
-<div class="box">
-🎯 Beginner Friendly + Step-by-Step Learning
-</div>
-
-<div class="box">
-🔥 Proven Strategy + Risk Management System
-</div>
+<div class="box">📈 Daily Intraday & Swing Trading Calls</div>
+<div class="box">💰 High Accuracy Trade Setups</div>
+<div class="box">📊 Live Market Updates</div>
+<div class="box">🎯 Beginner Friendly Learning</div>
 
 <div class="footer">
-⚠️ 100% FREE • Limited Access • Educational Purpose Only  
-Market investments are subject to risk.
+⚠️ This is not financial advice. Trading involves risk.
 </div>
 
 </div>
 
+<!-- ✅ ONLY CLICK TRACKING SCRIPT -->
 <script>
-function joinNow(){
-  fbq('track','Lead');
-  fbq('track','Subscribe');
-  fbq('trackCustom','TelegramJoin');
+function trackTelegramClick(){
+  fbq('track', 'Lead'); // ONLY THIS EVENT WILL FIRE
 }
 </script>
 
