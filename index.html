@@ -43,14 +43,11 @@ body {
   100% {background-position:0%}
 }
 
-.center-box {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.container {
+  max-width: 600px;
+  margin: auto;
   padding: 20px;
+  text-align: center;
 }
 
 .hero img {
@@ -71,24 +68,13 @@ h1 {
 }
 
 .tagline {
-  font-size: 16px;
   color: #ccc;
   margin-bottom: 15px;
 }
 
-.points {
-  margin: 15px 0;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.timer {
-  font-size: 24px;
-  color: #ff4d4d;
-  margin: 15px 0;
-}
-
 .cta-btn {
+  display: inline-block;
+  margin: 20px 0;
   padding: 18px 30px;
   font-size: 20px;
   border-radius: 12px;
@@ -96,15 +82,7 @@ h1 {
   color: #000;
   font-weight: bold;
   text-decoration: none;
-  opacity: 0.5;
-  pointer-events: none;
-  transition: 0.3s;
-}
-
-.cta-btn.active {
-  opacity: 1;
-  pointer-events: auto;
-  box-shadow: 0 0 25px gold;
+  box-shadow: 0 0 20px gold;
   animation: pulse 1.5s infinite;
 }
 
@@ -114,10 +92,17 @@ h1 {
   100%{box-shadow:0 0 10px gold}
 }
 
+.box {
+  background: rgba(255,255,255,0.05);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
 .fomo {
   color: #00ffcc;
-  font-size: 14px;
   margin-top: 10px;
+  font-size: 14px;
 }
 
 .footer {
@@ -131,7 +116,7 @@ h1 {
 
 <body>
 
-<div class="center-box">
+<div class="container">
 
 <div class="hero">
 <img src="trader.jpg">
@@ -140,51 +125,46 @@ h1 {
 <h1>TRADER PIHU (ORIGINAL)</h1>
 
 <div class="tagline">
-India’s Fast Growing Trading Community 🚀
+🚀 India’s Fast Growing Trading Community
 </div>
 
-<div class="points">
-📈 Daily Intraday & Swing Calls <br>
-💰 High Accuracy Trade Setups <br>
-🎯 Beginner to Advanced Learning <br>
-📊 Live Market Updates & Analysis <br>
-🔥 Proven Strategy + Risk Management
-</div>
+<a href="https://t.me/+iRuG8yBIQI80NDZl"
+class="cta-btn"
+onclick="joinNow()">
+🚀 JOIN FREE TELEGRAM CHANNEL </a>
 
 <div class="fomo">
 ⚡ 1200+ Traders Already Joined Today
 </div>
 
-<div class="timer" id="timer">⏳ Wait 30 sec...</div>
+<div class="box">
+📈 Daily Intraday & Swing Trading Calls
+</div>
 
-<a href="https://t.me/+iRuG8yBIQI80NDZl"
-id="joinBtn"
-class="cta-btn"
-onclick="joinNow()">
-🚀 JOIN FREE TELEGRAM CHANNEL </a>
+<div class="box">
+💰 High Accuracy Trade Setups + Profit Focus
+</div>
+
+<div class="box">
+📊 Live Market Updates + Chart Analysis
+</div>
+
+<div class="box">
+🎯 Beginner Friendly + Step-by-Step Learning
+</div>
+
+<div class="box">
+🔥 Proven Strategy + Risk Management System
+</div>
 
 <div class="footer">
-⚠️ 100% FREE • Limited Access • Educational Purpose Only
+⚠️ 100% FREE • Limited Access • Educational Purpose Only  
+Market investments are subject to risk.
 </div>
 
 </div>
 
 <script>
-let timeLeft = 30;
-let timerEl = document.getElementById("timer");
-let btn = document.getElementById("joinBtn");
-
-let countdown = setInterval(()=>{
-  timeLeft--;
-  timerEl.innerText = "⏳ Wait " + timeLeft + " sec...";
-
-  if(timeLeft <= 0){
-    clearInterval(countdown);
-    timerEl.innerText = "✅ Now You Can Join!";
-    btn.classList.add("active");
-  }
-},1000);
-
 function joinNow(){
   fbq('track','Lead');
   fbq('track','Subscribe');
