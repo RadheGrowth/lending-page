@@ -21,88 +21,100 @@ fbq('track', 'PageView');
 </script>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+
+body{
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c1c1c);
+background-size:400% 400%;
+animation:bg 10s infinite;
+display:flex;justify-content:center;align-items:center;
+min-height:100vh;color:#fff;
 }
 
-body {
-  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
+@keyframes bg{
+0%{background-position:0%}
+50%{background-position:100%}
+100%{background-position:0%}
 }
 
-/* MAIN CARD */
-.container {
-  width: 90%;
-  max-width: 420px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 25px;
-  text-align: center;
-  box-shadow: 0 0 40px rgba(0,0,0,0.5);
+.container{
+width:90%;max-width:420px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+border-radius:20px;padding:25px;text-align:center;
+box-shadow:0 0 40px rgba(0,0,0,0.6);
 }
 
-/* PROFILE IMAGE */
-.hero img {
-  width: 120px;
-  border-radius: 50%;
-  border: 3px solid gold;
-  margin-bottom: 15px;
+/* IMAGE */
+.hero img{
+width:110px;border-radius:50%;
+border:3px solid gold;margin-bottom:10px;
 }
 
 /* TITLE */
-h1 {
-  font-size: 22px;
-  color: #ffd700;
-  margin-bottom: 5px;
+h1{color:#ffd700;font-size:22px}
+.tagline{font-size:14px;color:#ccc;margin-bottom:15px}
+
+/* CTA */
+.cta-btn{
+display:block;width:100%;
+padding:16px;
+border-radius:10px;
+background:linear-gradient(90deg,#ffd700,#ff9900);
+color:#000;font-weight:bold;
+text-decoration:none;
+margin:15px 0;
+font-size:18px;
+animation:pulse 1.5s infinite;
 }
 
-.tagline {
-  font-size: 14px;
-  color: #ccc;
-  margin-bottom: 20px;
-}
-
-/* BUTTON */
-.cta-btn {
-  display: block;
-  width: 100%;
-  padding: 16px;
-  border-radius: 10px;
-  background: linear-gradient(90deg,#ffd700,#ff9900);
-  color: #000;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  margin: 15px 0;
-  transition: 0.3s;
-}
-
-.cta-btn:hover {
-  transform: scale(1.05);
+@keyframes pulse{
+0%{box-shadow:0 0 10px gold}
+50%{box-shadow:0 0 25px gold}
+100%{box-shadow:0 0 10px gold}
 }
 
 /* FEATURES */
-.feature {
-  background: rgba(255,255,255,0.07);
-  padding: 12px;
-  border-radius: 10px;
-  margin-top: 10px;
-  font-size: 14px;
+.feature{
+background:rgba(255,255,255,0.07);
+padding:12px;border-radius:10px;
+margin-top:10px;font-size:14px;
+}
+
+/* COUNTER */
+.counter{
+margin-top:10px;
+color:#00ffcc;
+font-size:14px;
+}
+
+/* TIMER */
+.timer{
+color:#ff4d4d;
+font-weight:bold;
+margin-top:8px;
+}
+
+/* TELEGRAM PREVIEW */
+.preview{
+background:#0e1621;
+border-radius:10px;
+padding:10px;
+margin-top:15px;
+text-align:left;
+font-size:12px;
+}
+
+.msg{
+background:#1f2a36;
+padding:8px;
+border-radius:8px;
+margin-top:5px;
 }
 
 /* FOOTER */
-.footer {
-  font-size: 11px;
-  color: #aaa;
-  margin-top: 15px;
+.footer{
+font-size:11px;color:#aaa;margin-top:15px;
 }
 </style>
 
@@ -113,7 +125,7 @@ h1 {
 <div class="container">
 
 <div class="hero">
-<img src="trader.jpg" alt="Trader Pihu">
+<img src="trader.jpg">
 </div>
 
 <h1>TRADER PIHU (ORIGINAL)</h1>
@@ -122,6 +134,7 @@ h1 {
 🚀 India’s Fast Growing Trading Community
 </div>
 
+<!-- BUTTON -->
 <a href="https://t.me/+iRuG8yBIQI80NDZl"
 target="_blank"
 class="cta-btn"
@@ -129,11 +142,28 @@ onclick="trackClick()">
 🚀 JOIN FREE TELEGRAM CHANNEL
 </a>
 
-<div class="feature">📈 Daily Intraday & Swing Trading Calls</div>
-<div class="feature">💰 High Accuracy Trade Setups</div>
+<div class="counter" id="counter">
+⚡ Loading active traders...
+</div>
+
+<div class="timer" id="timer"></div>
+
+<!-- FEATURES -->
+<div class="feature">📈 Daily Intraday & Swing Calls</div>
+<div class="feature">💰 High Accuracy Setups</div>
 <div class="feature">📊 Live Market Updates</div>
-<div class="feature">🎯 Beginner Friendly Learning</div>
-<div class="feature">🔥 Proven Strategy + Risk Management</div>
+<div class="feature">🎯 Beginner Friendly</div>
+<div class="feature">🔥 Risk Management Strategy</div>
+
+<!-- TELEGRAM PREVIEW -->
+<div class="preview">
+<b>📢 Telegram Signals Preview</b>
+
+<div class="msg">BUY BANKNIFTY 48200 CE</div>
+<div class="msg">TARGET: 120+ 🔥</div>
+<div class="msg">STOPLOSS: 60</div>
+
+</div>
 
 <div class="footer">
 ⚠️ This is not financial advice. Trading involves risk.
@@ -142,9 +172,30 @@ onclick="trackClick()">
 </div>
 
 <script>
+
+/* META TRACK */
 function trackClick(){
   fbq('track','Lead');
 }
+
+/* LIVE COUNTER */
+let count = Math.floor(Math.random()*200)+150;
+setInterval(()=>{
+  count += Math.floor(Math.random()*3);
+  document.getElementById("counter").innerHTML =
+  "⚡ " + count + "+ Traders Joined Today";
+},3000);
+
+/* TIMER */
+let time = 600;
+setInterval(()=>{
+  let m = Math.floor(time/60);
+  let s = time%60;
+  document.getElementById("timer").innerHTML =
+  "⏳ Free Access Closing In: "+m+":"+(s<10?"0"+s:s);
+  if(time>0) time--;
+},1000);
+
 </script>
 
 </body>
